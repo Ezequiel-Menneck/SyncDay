@@ -10,19 +10,6 @@ services:
       POSTGRES_PASSWORD: ${SYNCDAY_DATABASE_PASSWORD}
     volumes:
       - db:/var/lib/postgresql/data
-#
-#  app:
-#    build: .
-#    ports:
-#      - "8080:8080"
-#    environment:
-#      SYNCDAY_DATABASE_NAME: ${SYNCDAY_DATABASE_NAME}
-#      SYNCDAY_DATABASE_USER: ${SYNCDAY_DATABASE_USER}
-#      SYNCDAY_DATABASE_PASSWORD: ${SYNCDAY_DATABASE_PASSWORD}
-#      SYNCDAY_DATABASE_PORT: ${SYNCDAY_DATABASE_PORT:-5432}
-#      SYNCDAY_DATABASE_HOST: ${SYNCDAY_DATABASE_HOST_DOCKER:-db}
-#    depends_on:
-#      - db
 
 volumes:
   db:
