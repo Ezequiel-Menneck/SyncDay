@@ -1,0 +1,19 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "./queries"
+    schema: "./migrations"
+    gen:
+      go:
+        out: "."
+        package: "pgstore"
+        sql_package: "pgx/v5"
+        emit_json_tags: true
+        emit_db_tags: true
+        overrides:
+          - db_type: "serial"
+            go_type: "int"  # Ou "int" dependendo da sua arquitetura
+          - db_type: "integer"
+            go_type: "int"  # Mapeia integer (32 bits) para int no Go
+          - db_type: "bigint"
+            go_type: "int"  # Mapeia bigint (64 bits) para int no Go
