@@ -9,6 +9,7 @@ RUN go mod download && go mod verify
 COPY . .
 
 WORKDIR /syncday/cmd/syncday
+COPY .env .
 
 RUN go build -o /syncday/bin/syncday .
 
